@@ -1,7 +1,11 @@
 @use '../util' as *;
 
+/* ==================== */
+/* Utility Classes      */
+/* ==================== */
+
 .container {
-	padding: 0 rem(24);
+	padding: 0 2em;
 	max-width: rem(1110);
 	margin: 0 auto;
 
@@ -9,4 +13,20 @@
 		padding: 0;
 		transform: translate(0, 0);
 	}
+}
+
+.flex { display: flex; }
+
+.grid { display: grid; }
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap; /* added line */
+	border: 0;
 }
