@@ -1,3 +1,20 @@
+@use '../util' as *;
+
 :root {
     --ff-primary: sans-serif;
+
+    /* Font sizes */
+    --fs-200: rem(14);
+    --fs-300: rem(16);
+    --fs-400: rem(18);
+    --fs-500: rem(28);
+    --fs-600: rem(32);
+    --fs-700: rem(56);
+    --fs-800: rem(100);
+    --fs-900: rem(150);
+
+    /* font-families */
+    --ff-serif: "Bellefair", serif;
+    --ff-sans-cond: "Barlow Condensed", sans-serif;
+    --ff-sans-normal: "Barlow", sans-serif;
 }
