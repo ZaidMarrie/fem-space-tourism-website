@@ -1,10 +1,80 @@
 @use '../util' as *;
 
-.nav__list {
-    --gap: 4rem;
+.header {
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: em(24);
+    padding-left: em(24);
+
+    @include breakpoint(medium) {
+        padding-top: 0;
+        padding-left: em(40);
+    }
+
+    @include breakpoint(large) {
+        padding-top: em(40);
+        padding-left: em(55);
+    }
 }
 
-.nav__link > span {
-    font-weight: 700;
-    padding-right: 10px;
+.nav {
+
+    // Mobile Nav Only
+    &__list--item.indicator--underline {
+        @include breakpoint-down(small) {
+            border: 0;
+            padding-block: 11px;
+            &.active {
+                border-right: 4px solid hsl( var(--clr-light) );
+            }
+        }
+    }
+
+    // Navigation <ul>
+    &__list {
+        --gap: min(2.3125rem, 5vw);
+        padding: 0;
+        background: hsla( var(--clr-dark), 0.9 );
+
+        @include breakpoint-down(small) {
+            --gap: 1.5625rem;
+            padding: rem(100) 0 rem(300) em(32);
+            flex-direction: column;
+            position: fixed;
+            inset: 0 0 0 31.5%;
+            z-index: 99;
+            transform: translateX(100%);
+            transition: transform 350ms ease-in-out;
+
+            &[data-visible='true'] {
+                transform: translateX(0);
+            }
+        }
+
+        @include breakpoint(medium) {
+            padding-inline: clamp(2rem,4vw,7rem);
+        }
+
+        @include breakpoint(large) {
+            --gap: min(3rem, 4.5vw);
+        }
+    }
+
+    // Numbers in navigation links
+    &__link > span {
+        font-weight: 700;
+        padding-right: min(10px, 1vmin);
+
+        @media (min-width: 35em) and (max-width: 51.9375em) {
+            display: none;
+        }
+    }
+}
+
+@supports (backdrop-filter: blur(2px)) {
+    .nav__list {
+        background: hsla( var(--clr-light), 0.04 );
+        backdrop-filter: blur(27px);
+    }
 }

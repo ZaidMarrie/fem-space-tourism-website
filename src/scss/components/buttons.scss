@@ -2,6 +2,7 @@
 
 .btn-large {
     width: 100%;
+    min-width: 150px;
     max-width: 150px;
     aspect-ratio: 1;
     border-radius: 50%;
@@ -13,12 +14,11 @@
     letter-spacing: 1.25px;
 
     @include breakpoint(medium) {
-        width: 242px;
+        max-width: 242px;
         font-size: rem(26);
     }
     
     @include breakpoint(large) {
-        min-width: 242px;
         max-width: 274px;
         margin-right: 2em;
         font-size: rem(32);
@@ -44,4 +44,48 @@
             transform: scale(1.5);
         }
     }
+}
+
+// Navigation toggle button
+.nav-toggle {
+    display: none;
+
+    @include breakpoint-down(small) {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: rem(24);
+        z-index: 100;
+        width: 24px;
+        height: 24px;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url('../assets/shared/icon-hamburger.svg');
+        transform: translateY(-50%);
+
+        &[aria-expanded='true'] {
+            background-image: url('../assets/shared/icon-close.svg');
+        }
+
+        &:focus-visible {
+            outline: 2px solid #D0D6F9;
+            outline-offset: 2px;
+        }
+    }
+}
+
+.skip-to-content {
+    position: absolute;
+    z-index: 9999;
+    background: hsl( var(--clr-light) );
+    color: hsl( var(--clr-dark) );
+    padding: .5em 1em;
+    margin-inline: auto;
+    transform: translateY(-100%);
+    transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+    transform: translateY(0);
 }

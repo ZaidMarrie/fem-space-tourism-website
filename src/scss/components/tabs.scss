@@ -10,8 +10,9 @@
 /* Underline Style       */
 /* ===================== */
 .indicator--underline {
+    --underline-gap: 2.3125rem;
     cursor: pointer;
-    padding: em(35) 0;
+    padding: var(--underline-gap) 0;
     border-bottom: 3px solid hsla( var(--clr-light) , 0);
 
     &:hover,
