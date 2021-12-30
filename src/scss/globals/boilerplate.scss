@@ -1,3 +1,9 @@
+@use '../util' as *;
+
+/* ===================== */
+/* Resets                */
+/* ===================== */
+
 html {
     box-sizing: border-box;
 }
@@ -6,15 +12,93 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
+    font-weight: 400;
+}
+
+body,
+h1,
+h2, 
+h3,
+h4,
+h5,
+p, 
+figure,
+picture {
+    margin: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    line-height: 1.65;
     min-height: 100vh;
+    font-size: var(--fs-400);
+    font-family: var(--ff-sans-normal);
+    color: hsl( var(--clr-light ) );
+    background-color: hsl( var(--clr-dark) );
+
+    display: grid;
+    grid-template-rows: min-content 1fr;
+
+    background-size: cover;
+    background-position: center;
 }
 
-img {
+img,
+picture {
     display: block;
     max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {  
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+}
+
+/* ===================== */
+/* Global Styles         */
+/* ===================== */
+main {
+    text-align: center;
+    @include breakpoint(large) {
+        text-align: left;
+    }
+}
+
+p {
+    max-width: 55ch;
+    color: hsl( var(--clr-light ), 0.775 )
+}
+
+.home {
+    background-image: url('../assets/home/background-home-mobile.jpg');
+    @include breakpoint(medium) {
+        background-image: url('../assets/home/background-home-tablet.jpg');
+    }
+    @include breakpoint(large) {
+        background-image: url('../assets/home/background-home-desktop.jpg');
+    }
 }

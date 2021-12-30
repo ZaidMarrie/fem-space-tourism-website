@@ -15,7 +15,7 @@ function copyHtml() {
 
 // Copy all images as they are (no optimization required)
 function copyImages() {
-    return src('src/assets/**/*.{jpg, png, webp}')
+    return src('src/assets/**/*.{jpg, png, webp, svg}')
         .pipe(dest('build/assets'));
 }
 

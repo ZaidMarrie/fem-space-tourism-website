@@ -13,21 +13,38 @@
   <link rel="stylesheet" href="css/style.css">
   <script defer src="js/script.js"></script>
 </head>
-<body>
-
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
-
-  So, you want to travel to
-  Space
-  Let’s face it; if you want to go to space, you might as well genuinely go to 
-  outer space and not hover kind of on the edge of it. Well sit back, and relax 
-  because we’ll give you a truly out of this world experience!
-
-  Explore
-  <a href="#" class="btn-large bg-light text-dark fs-500 uppercase">Explore</a>
+<body class="home">
+  <header class="header">
+    <div></div>
+    <nav class="nav">
+      <ul class="nav__list flex">
+        <li class="nav__list--item indicator--underline active">
+          <a href="index.html" class="nav__link ff-sans-cond text-light uppercase ls-3"><span>00</span> Home</a>
+        </li>
+        <li class="nav__list--item indicator--underline">
+          <a href="destination.html" class="nav__link ff-sans-cond text-light uppercase ls-3"><span>01</span> Destination</a>
+        </li>
+        <li class="nav__list--item indicator--underline">
+          <a href="crew.html" class="nav__link ff-sans-cond text-light uppercase ls-3"><span>02</span> Crew</a>
+        </li>
+        <li class="nav__list--item indicator--underline">
+          <a href="technology.html" class="nav__link ff-sans-cond text-light uppercase ls-3"><span>03</span> Technology</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container container--grid">
+    <div class="grid-col-1">
+      <h1 class="ff-sans-cond fs-500 text-accent uppercase ls-2">So, you want to travel to <span class="d-block ff-serif fs-900 text-light">Space</span></h1>
+      <p>Let’s face it; if you want to go to space, you might as well genuinely go to 
+        outer space and not hover kind of on the edge of it. Well sit back, and relax 
+        because we’ll give you a truly out of this world experience!</p>
+    </div>
+  
+    <div class="grid-col-2">
+      <a href="#" class="btn-large ff-serif bg-light text-dark uppercase">Explore</a>
+    </div>
+  </main>
 
 </body>
 </html>

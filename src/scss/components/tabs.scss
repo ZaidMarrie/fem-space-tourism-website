@@ -1,0 +1,73 @@
+@use '../util' as *;
+
+.indicator--disc,
+.indicator--numbered {
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+/* ===================== */
+/* Underline Style       */
+/* ===================== */
+.indicator--underline {
+    cursor: pointer;
+    padding: em(35) 0;
+    border-bottom: 3px solid hsla( var(--clr-light) , 0);
+
+    &:hover,
+    &:focus {
+        border-color: hsla( var(--clr-light) , 0.5);
+    }
+
+    &.active, 
+    &[aria-selected="true"] {
+        color: hsl( var(--clr-light) );
+        border-color: hsla( var(--clr-light) , 1);
+    }
+}
+
+/* ===================== */
+/* Dot Style             */
+/* ===================== */
+.indicator--disc {
+    width: 15px;
+    background-color: hsla( var(--clr-light) , 0.25);
+
+    &:hover,
+    &:focus {
+        background-color: hsla( var(--clr-light) , 0.5);
+    }
+    &[aria-selected="true"] {
+        background-color: hsla( var(--clr-light) , 1);
+    }
+}
+
+/* ===================== */
+/* Numbered Style        */
+/* ===================== */
+.indicator--numbered {
+    width: 80px;
+    color: hsl( var(--clr-light) );
+    border: 1px solid hsla( var(--clr-light) , 0.25);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-600);
+
+    &:hover,
+    &:focus {
+        border-color: hsla( var(--clr-light) , 1);
+    }
+    &[aria-selected="true"] {
+        color: hsl( var(--clr-dark) );
+        background-color: hsla( var(--clr-light) , 1);
+    }
+}
+
+
+/* ===================== */
+/* Tab Style             */
+/* ===================== */
+.tab__list {
+    --gap: rem(35);
+}

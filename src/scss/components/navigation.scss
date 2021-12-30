@@ -1,0 +1,10 @@
+@use '../util' as *;
+
+.nav__list {
+    --gap: 4rem;
+}
+
+.nav__link > span {
+    font-weight: 700;
+    padding-right: 10px;
+}
