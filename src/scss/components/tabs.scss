@@ -10,9 +10,8 @@
 /* Underline Style       */
 /* ===================== */
 .indicator--underline {
-    --underline-gap: 2.3125rem;
     cursor: pointer;
-    padding: var(--underline-gap) 0;
+    padding: var(--underline-gap, 2.25rem) 0;
     border-bottom: 3px solid hsla( var(--clr-light) , 0);
 
     &:hover,
@@ -70,5 +69,10 @@
 /* Tab Style             */
 /* ===================== */
 .tab__list {
-    --gap: rem(35);
+    --gap: 3vmin;
+}
+
+.tab-list > button {
+    background: transparent;
+    justify-self: start;
 }
