@@ -43,12 +43,30 @@
 
     <main id="main" class="container container--grid container--grid-crew flow">
         <h1 class="numbered-title"><span aria-hidden="true">02</span> Meet your crew</h1>
-        <picture class="crew__img">
+
+        <!-- The Commander Image -->
+        <picture id="commander-image" class="tab-panel__img crew__img">
             <source srcset="../assets/crew/image-douglas-hurley.webp" type="image/webp">
             <img src="../assets/crew/image-douglas-hurley.png" alt="Douglas Hurley">
         </picture>
+        <!-- The Mission Specialist Image -->
+        <picture id="mission-specialist-image" class="tab-panel__img crew__img" hidden>
+            <source srcset="../assets/crew/image-mark-shuttleworth.webp" type="image/webp">
+            <img src="../assets/crew/image-mark-shuttleworth.png" alt="Mark Shuttleworth">
+        </picture>
+        <!-- The Pilot Image -->
+        <picture id="pilot-image" class="tab-panel__img crew__img" hidden>
+            <source srcset="../assets/crew/image-victor-glover.webp" type="image/webp">
+            <img src="../assets/crew/image-victor-glover.png" alt="Victor Glover">
+        </picture>
+        <!-- The Flight Engineer Image -->
+        <picture id="flight-engineer-image" class="tab-panel__img crew__img" hidden>
+            <source srcset="../assets/crew/image-anousheh-ansari.webp" type="image/webp">
+            <img src="../assets/crew/image-anousheh-ansari.png" alt="Anousheh Ansari">
+        </picture>
 
-        <article class="crew__info">
+        <!-- The Commander -->
+        <article id="commander-tab" class="tab-panel tab-panel--crew crew__info" role="tabpanel" tabindex="0">
             <h2 class="crew__member-role ff-serif fs-600 uppercase">Commander</h2>
             <p class="crew__member ff-serif fs-700 text-light uppercase">Douglas Hurley</p>
 
@@ -56,11 +74,36 @@
             and former NASA astronaut. He launched into space for the third time as 
             commander of Crew Dragon Demo-2.</p>
         </article>
+
+        <!-- The Mission Specialist -->
+        <article id="mission-specialist-tab" class="tab-panel tab-panel--crew crew__info" role="tabpanel" tabindex="0" hidden>
+            <h2 class="crew__member-role ff-serif fs-600 uppercase">Mission Specialist</h2>
+            <p class="crew__member ff-serif fs-700 text-light uppercase">Mark Shuttleworth</p>
+
+            <p>Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.</p>
+        </article>
+
+        <!-- The Pilot -->
+        <article id="pilot-tab" class="tab-panel tab-panel--crew crew__info" role="tabpanel" tabindex="0" hidden>
+            <h2 class="crew__member-role ff-serif fs-600 uppercase">Pilot</h2>
+            <p class="crew__member ff-serif fs-700 text-light uppercase">Victor Glover</p>
+
+            <p>Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.</p>
+        </article>
+
+        <!-- The Flight Engineer -->
+        <article id="flight-engineer-tab" class="tab-panel tab-panel--crew crew__info" role="tabpanel" tabindex="0" hidden>
+            <h2 class="crew__member-role ff-serif fs-600 uppercase">Flight Engineer</h2>
+            <p class="crew__member ff-serif fs-700 text-light uppercase">Anousheh Ansari</p>
+
+            <p>Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.</p>
+        </article>
+
         <div class="tab-list flex" role="tablist">
-            <button class="indicator--disc" aria-selected="true" role="tab" tabindex="0"><span class="sr-only">Commander</span></button>
-            <button class="indicator--disc" aria-selected="false" role="tab" tabindex="-1"><span class="sr-only">Mission Specialist</span></button>
-            <button class="indicator--disc" aria-selected="false" role="tab" tabindex="-1"><span class="sr-only">Pilot</span></button>
-            <button class="indicator--disc" aria-selected="false" role="tab" tabindex="-1"><span class="sr-only">Flight Engineer</span></button>
+            <button class="indicator--disc" aria-selected="true" aria-controls="commander-tab" data-tab-image="commander-image" role="tab" tabindex="0"><span class="sr-only">Commander</span></button>
+            <button class="indicator--disc" aria-selected="false" aria-controls="mission-specialist-tab" data-tab-image="mission-specialist-image" role="tab" tabindex="-1"><span class="sr-only">Mission Specialist</span></button>
+            <button class="indicator--disc" aria-selected="false" aria-controls="pilot-tab" data-tab-image="pilot-image" role="tab" tabindex="-1"><span class="sr-only">Pilot</span></button>
+            <button class="indicator--disc" aria-selected="false" aria-controls="flight-engineer-tab" data-tab-image="flight-engineer-image" role="tab" tabindex="-1"><span class="sr-only">Flight Engineer</span></button>
         </div>
     </main>
 </body>

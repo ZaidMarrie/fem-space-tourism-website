@@ -42,6 +42,7 @@
 }
 
 .container--grid {
+	overflow-x: hidden;
 	--gap: 2rem;
 	display: grid;
 	place-items: center;
@@ -95,6 +96,8 @@
 	.destination__img {
 		grid-area: image;
 		max-width: 70%;
+		align-self: start;
+		margin-top: min(3.5rem, 4vmax);
 	}
 
 	.tab-list {
@@ -172,6 +175,7 @@
 	@include breakpoint(large) {
 		align-items: end;
 		justify-items: start;
+		grid-template-columns: minmax(0, 38.4375rem) minmax(0, 20.9375rem);
 		grid-template-areas: 
 			'title image'
 			'article image'
@@ -212,13 +216,8 @@
 	}
 
 	.tech__info {
-		gap: 0.5rem;
 		padding-bottom: min(1rem, 3vw);
 		grid-area: article;
-		flex-direction: column;
-		&--title {
-			order: -1;
-		}
 		& p:last-child {
 			margin-top: min(1em, 3vmin);
 		}

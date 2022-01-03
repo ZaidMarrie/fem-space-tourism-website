@@ -18,7 +18,6 @@
     &:focus {
         border-color: hsla( var(--clr-light) , 0.5);
     }
-
     &.active, 
     &[aria-selected="true"] {
         color: hsl( var(--clr-light) );
@@ -36,6 +35,10 @@
     &:hover,
     &:focus {
         background-color: hsla( var(--clr-light) , 0.5);
+    }
+    &:focus {
+        outline: 2px solid hsl( var(--clr-light) );
+        outline-offset: 2px;
     }
     &[aria-selected="true"] {
         background-color: hsla( var(--clr-light) , 1);
@@ -59,6 +62,10 @@
     &:focus {
         border-color: hsla( var(--clr-light) , 1);
     }
+    &:focus {
+        outline: 2px solid hsl( var(--clr-light) );
+        outline-offset: 2px;
+    }
     &[aria-selected="true"] {
         color: hsl( var(--clr-dark) );
         background-color: hsla( var(--clr-light) , 1);
@@ -67,13 +74,52 @@
 
 
 /* ===================== */
-/* Tab Style             */
+/* Tabs                  */
 /* ===================== */
 .tab__list {
     --gap: 3vmin;
 }
 
-.tab-list > button:is(.indicator--underline) {
+.tab-list > button.indicator--underline {
     background: transparent;
     justify-self: start;
+}
+
+.tab-panel {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 450ms ease-in-out, opacity 350ms linear;
+
+    &[hidden] {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(100%);
+    }
+}
+
+.tab-panel--crew[hidden],
+.tab-panel--tech[hidden] {
+    transform: translateX(-100%);
+    @include breakpoint-down(medium) {
+        transform: translateX(100%);
+    }
+}
+
+.tab-panel__img {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 450ms ease-in-out, opacity 350ms linear;
+
+    &[hidden] {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    &--destination[hidden] {
+        transform: translateX(-100%);
+        @include breakpoint-down(medium) {
+            transform: translateX(100%);
+        }
+    }
 }

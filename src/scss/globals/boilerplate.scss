@@ -4,9 +4,7 @@
 /* Resets                */
 /* ===================== */
 
-html {
-    box-sizing: border-box;
-}
+html { box-sizing: border-box; }
 
 *,
 *::before,
@@ -45,9 +43,10 @@ body {
 
 img,
 picture {
-    display: block;
     max-width: 100%;
 }
+
+img { display: block; }
 
 input,
 button,
