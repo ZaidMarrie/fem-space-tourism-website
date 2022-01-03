@@ -26,6 +26,8 @@ Users should be able to:
 
 ### Screenshot
 
+![Frontend Mentor Space tourism website](https://user-images.githubusercontent.com/84665360/147949700-75f1baed-f813-495c-8526-c7ebfd0231ab.png)
+
 ### Links
 
 - [Solution URL](https://github.com/ZaidMarrie/space-tourism-website)
