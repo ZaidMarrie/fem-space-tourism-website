@@ -74,7 +74,7 @@
 }
 
 /* ==================== */
-/* Destination Page      */
+/* Destination Page     */
 /* ==================== */
 .container--grid-destination {
 	--flow-space: 2rem;	
@@ -129,5 +129,119 @@
 			'title title'
 			'image tabs'
 			'image article';
+	}
+}
+
+/* ==================== */
+/* Crew Page            */
+/* ==================== */
+.container--grid-crew {
+	--flow-space: 2rem;
+	grid-template-areas: 
+		'title'
+		'image'
+		'tabs'
+		'article';
+
+	.numbered-title {
+		grid-area: title;
+	}
+	
+	.crew__img {
+		padding-inline: 5em;
+		border-bottom: 1px solid hsla( var(--clr-light ), 0.5 );
+		grid-area: image;
+	}
+
+	.tab-list {
+		grid-area: tabs;
+	}
+
+	.crew__info {
+		grid-area: article;
+		padding-bottom: 2em;
+	}
+
+	@include breakpoint(medium) {
+		grid-template-areas: 
+			'title'
+			'article'
+			'tabs'
+			'image';
+	}
+	@include breakpoint(large) {
+		align-items: end;
+		justify-items: start;
+		grid-template-areas: 
+			'title image'
+			'article image'
+			'tabs image';
+		
+		.tab-list {
+			padding-bottom: min(5.7rem, 5vmax);
+		}
+
+		.crew__img {
+			border: 0;
+			padding: 1rem 0 0;
+		}
+	}
+}
+
+/* ==================== */
+/* Technology Page      */
+/* ==================== */
+.container--grid-tech {
+	--flow-space: 2rem;
+	grid-template-areas: 
+		'title'
+		'image'
+		'tabs'
+		'article';
+
+	.numbered-title {
+		grid-area: title;
+	}
+
+	.tech__img {
+		grid-area: image;
+	}
+
+	.tab-list {
+		grid-area: tabs;
+	}
+
+	.tech__info {
+		gap: 0.5rem;
+		padding-bottom: min(1rem, 3vw);
+		grid-area: article;
+		flex-direction: column;
+		&--title {
+			order: -1;
+		}
+		& p:last-child {
+			margin-top: min(1em, 3vmin);
+		}
+	}
+
+	@include breakpoint(large) {
+		padding: 0;
+		margin: 0;
+		min-width: 100%;
+		padding-bottom: min(6rem, 6vw);
+		justify-items: start;
+		grid-template-columns: minmax(1rem, 1fr) min-content repeat(2, minmax(0, 555px)) minmax(1rem, 1fr);
+		grid-template-areas: 
+			'. title title title .'
+			'. tabs article image image'
+			'. tabs article image image';
+
+		.tech__img {
+			justify-self: end;
+		}
+		
+		.tab-list {
+			flex-direction: column;
+		}
 	}
 }

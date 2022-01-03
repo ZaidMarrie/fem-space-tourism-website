@@ -53,6 +53,7 @@
     align-items: center;
     justify-content: center;
     font-size: var(--fs-600);
+    background: transparent;
 
     &:hover,
     &:focus {
@@ -72,7 +73,7 @@
     --gap: 3vmin;
 }
 
-.tab-list > button {
+.tab-list > button:is(.indicator--underline) {
     background: transparent;
     justify-self: start;
 }

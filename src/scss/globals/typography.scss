@@ -40,7 +40,7 @@ a:visited {
 .fs-900 { line-height: 1; }
 
 .numbered-title {
-    margin-top: 1em;
+    margin-top: 1rem;
     font-family: var(--ff-sans-cond);
     font-size: var(--fs-500);
     letter-spacing: 4.72px; 
@@ -49,10 +49,19 @@ a:visited {
 
 .numbered-title span {
     font-weight: 700;
-    padding-right: clamp(1.125rem, 3vw, 1.75rem);
+    padding-right: min(1.5rem, 2vmin);
     color: hsla( var(--clr-light) , .25);
 }
 
 .measurement {
     font-size: 1.75rem;
+}
+
+.crew__member {
+    margin-bottom: min(1.6rem, 4.25vmin);
+}
+
+.crew__member-role {
+    margin: min(0.9375rem, 2.25vmin) 0;
+    color:hsla( var(--clr-light) , .5);
 }

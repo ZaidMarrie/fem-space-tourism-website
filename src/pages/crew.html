@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
     <!-- Google fonts -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
-        rel="stylesheet"> -->
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <script defer src="../js/script.js"></script>
     <title>Frontend Mentor | Space tourism website</title>
@@ -43,13 +43,25 @@
 
     <main id="main" class="container container--grid container--grid-crew flow">
         <h1 class="numbered-title"><span aria-hidden="true">02</span> Meet your crew</h1>
+        <picture class="crew__img">
+            <source srcset="../assets/crew/image-douglas-hurley.webp" type="image/webp">
+            <img src="../assets/crew/image-douglas-hurley.png" alt="Douglas Hurley">
+        </picture>
 
-        Commander
-        Douglas Hurley
+        <article class="crew__info">
+            <h2 class="crew__member-role ff-serif fs-600 uppercase">Commander</h2>
+            <p class="crew__member ff-serif fs-700 text-light uppercase">Douglas Hurley</p>
 
-        Douglas Gerald Hurley is an American engineer, former Marine Corps pilot 
-        and former NASA astronaut. He launched into space for the third time as 
-        commander of Crew Dragon Demo-2.
+            <p>Douglas Gerald Hurley is an American engineer, former Marine Corps pilot 
+            and former NASA astronaut. He launched into space for the third time as 
+            commander of Crew Dragon Demo-2.</p>
+        </article>
+        <div class="tab-list flex" role="tablist">
+            <button class="indicator--disc" aria-selected="true" role="tab" tabindex="0"><span class="sr-only">Commander</span></button>
+            <button class="indicator--disc" aria-selected="false" role="tab" tabindex="-1"><span class="sr-only">Mission Specialist</span></button>
+            <button class="indicator--disc" aria-selected="false" role="tab" tabindex="-1"><span class="sr-only">Pilot</span></button>
+            <button class="indicator--disc" aria-selected="false" role="tab" tabindex="-1"><span class="sr-only">Flight Engineer</span></button>
+        </div>
     </main>
 </body>
 </html>
